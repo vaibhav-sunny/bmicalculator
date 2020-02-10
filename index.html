@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BMI Calculator</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+       .btn1{
+           display: block;
+           margin-left: auto;
+           margin-right: auto;
+       }
+       .optionalht{
+           display: block;
+           width: auto;
+           margin-left: auto;
+           margin-right: auto;
+           margin-bottom: 1rem;
+       }
+
+       .btnenter1{
+            display: block;
+           width: auto;
+           margin-top: 0.5rem;
+           
+       } 
+       body{
+           margin-top: 50px;
+           background-color: #333;
+           color: ivory;
+       }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+                <h1 class="display-4 text-center style.mt: 50px;">BMI CALCULATOR</h1>
+
+                <button class=" btn btn-warning text-center optionalht" type="button" onclick="hidecms()">Convert Height [feet-inches into cms]</button>
+
+                <div id="formhidden">
+                    <form>
+                    <div class="form-group">
+                            <!--<label>Enter height in feet-inches(optional)</label>-->
+                            <input id="ftinput" type="number" class="form-control form-control-sm" placeholder="feet"/>
+                            <input style="margin-top: 0.3rem;"  id="ininput" type="number" class="form-control form-control-sm" placeholder="inches"/>
+                            
+                            <div id="output1" style="margin-top: 0.5rem;">
+                                <div class="card text-white bg-secondary">
+                                    <div class="card-block">
+                                        <h4>cms: </h4>
+                                        <div id="cmsoutput"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="btnenter1">
+                                <button type="button" class="btn btn-warning btn-sm text-center" id="btnenter" value="submit" onclick="enter()">Convert</button>
+                                <button type="reset" class="btn btn-warning btn-sm text-center" id="btnenterreset" value="reset">Reset</button>
+                            </div>
+                        </div>
+                         
+                    </form>
+                    
+                </div>
+                
+                <form>   
+                    <div class="form-group">
+                        <input id="htinput" type="number" step="0.1" class="form-control form-control-lg" placeholder="Enter height in cms"/><br>
+                        <input id="wtinput" type="number" step="0.1" class="form-control form-control-lg" placeholder="Enter weight in Kg"/>
+                    </div>
+                    <div class="btn1">
+                        <button type="button" class="btn btn-primary text-center" id="btn" value="submit" onclick="calc()">CALCULATE</button>
+                        <button type="reset" class="btn btn-primary text-center" id="btnreset" value="reset" onclick="resetcards()">RESET</button>
+                    </div>
+                </form>
+                <br>
+                
+                <div id="output">
+                    <div class="card text-ivory bg-secondary mb-2">
+                        <div class="card-block">
+                            <h4>BMI: </h4>
+                            <div id="bmioutput"></div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+                
+
+                    <div id="normalCard" class="card text-ivory bg-success mb-2">
+                        <div class="card-block">
+                            <h4>Indicator: </h4>
+                            <div id="normalOutput"></div>
+                        </div>
+                    </div>
+
+                    <div id="underCard" class="card text-ivory bg-info mb-2">
+                        <div class="card-block">
+                            <h4>Indicator: </h4>
+                            <div id="underOutput"></div>
+                        </div>
+                    </div>
+
+                    <div id="overCard" class="card text-ivory bg-warning mb-2">
+                        <div class="card-block">
+                            <h4>Indicator: </h4>
+                            <div id="overOutput"></div>
+                        </div>
+                    </div>
+
+                    <div id="obeseCard" class="card text-white bg-danger mb-2">
+                        <div class="card-block">
+                            <h4>Indicator: </h4>
+                            <div id="obeseOuput"></div>
+                        </div>
+                    </div>
+
+
+
+
+
+                
+
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="bmi.js"></script>
+
+</body>
+</html>
